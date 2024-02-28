@@ -473,6 +473,7 @@ let scaleSymbolInBlock
 
 /// HLP 23: AUTHOR Klapper - Rotates a symbol based on a degree, including: ports and component parameters.
 
+//split
 let rotateSymbolByDegree (degree: Rotation) (sym:Symbol)  =
     let pos = {X = sym.Component.X + sym.Component.W / 2.0 ; Y = sym.Component.Y + sym.Component.H / 2.0 }
     match degree with
@@ -524,6 +525,7 @@ let oneCompBoundsBothEdges (selectedSymbols: Symbol list) =
     (maxXSymCentre.X = minXSymCentre.X) || (maxYSymCentre.Y = minYSymCentre.Y)
     
 
+//split
 let findSelectedSymbols (compList: ComponentId list) (model: SymbolT.Model) = 
     List.map (fun x -> model.Symbols |> Map.find x) compList
 
@@ -623,6 +625,11 @@ let groupNewSelectedSymsModel
 /// <param name="model"> Current symbol model</param>
 /// <param name="flip"> Type of flip to do</param>
 /// <returns>New flipped symbol model</returns>
+/// 
+/// 
+
+
+//split here
 let flipBlock (compList:ComponentId list) (model:SymbolT.Model) (flip:FlipType) = 
     //Similar structure to rotateBlock, easy to understand
     let SelectedSymbols = List.map (fun x -> model.Symbols |> Map.find x) compList
